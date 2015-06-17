@@ -1,0 +1,48 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  body
+  form(action="", method="post")
+    div.container
+      div.form
+       label(id="departure") Departure City
+        div.form 
+         select(name="departcity" id="departure")
+           option(selected value="no") Choose a City
+           option(value="0") Chicago
+           option(value="1") Los Angeles
+           option(value="2") New York
+      div.form
+        label(id="arrival") Arrival City
+         div.form
+          select(name="arrivcity" id="arrival")
+           option(selected value="no") Choose a City
+           option(value="0") Chicago
+           option(value="1") Los Angeles
+           option(value="2") New York
+           p
+       label(for='bag') Number of bags checked ($25/bag)
+         p
+         input#bag(name="bag" type='number', min='0')
+         p
+         label(for='seat') Class
+         p
+         select#seat(name="seat")
+           option(value='0') Coach   
+           option(value='200') Business (+ $200)
+           option(value='500') First (+ $500)
+         p
+         input#wifi(type='checkbox', value="12" name='wifi')
+         label(for='wifi') Wifi ($12)
+         p
+         label(for='discount') Discount code
+         p
+         input#discount(type='text', name='discount')
+         p    
+         button#button(type='submit') Calculate Price  
+         p#output Your price is $  #{price}
+         
+
+           
